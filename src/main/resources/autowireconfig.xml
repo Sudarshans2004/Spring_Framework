@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="address" class=".Address">
+        <property name="city" value="Pune"/>
+        <property name="state" value="Maharashtra"/>
+    </bean>
+
+    <!-- byName: Spring matches the property name "address" to a bean with id="address" -->
+    <bean id="emp" class="com.springcore.auto.wire.Emp" autowire="byName"/>
+
+    <!-- byType: Spring matches the property type "Address" to a bean of type Address -->
+    <!-- <bean id="emp" class="com.springcore.auto.wire.Emp" autowire="byType"/> -->
+
+    <!-- constructor: Spring matches constructor argument type to a bean of that type -->
+    <!-- <bean id="emp" class="com.springcore.auto.wire.Emp" autowire="constructor"/> -->
+
+</beans>
